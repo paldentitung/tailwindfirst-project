@@ -1,0 +1,68 @@
+body {
+  position: relative;
+
+  background-attachment: fixed;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url("./images/backgoundimage.jpg") no-repeat center center/cover;
+  filter: brightness(65%);
+  height: 100%;
+}
+
+.menu.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.open .line2 {
+  opacity: 0;
+}
+
+.menu.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.hero-info {
+  animation: BackIn 1s ease-in-out;
+}
+.intro h1 {
+  animation: SlideLeft 1s ease-in-out;
+}
+.intro p {
+  animation: SlideRight 1s linear;
+}
+@keyframes BackIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes SlideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes SlideLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
